@@ -1,0 +1,2234 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang=""xmlns:th="http://www.thymeleaf.org">
+<!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Inquery</title>
+	<meta name="description" content="Sufee Admin - HTML5 Admin Template">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+	<link rel="apple-touch-icon" href="apple-icon.png">
+	<link rel="shortcut icon" href="favicon.ico">
+
+    <link rel="stylesheet"th:href="@{/css/normalize.css}" href="../../static/css/normalize.css">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"href="../../static/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}"href="../../static/css/font-awesome.min.css">
+    <link rel="stylesheet"th:href="@{/css/themify-icons.css}" href="../../static/css/themify-icons.css">
+    <link rel="stylesheet"th:href="@{/css/flag-icon.min.css}" href="../../static/css/flag-icon.min.css">
+    <link rel="stylesheet" th:href="@{/css/cs-skin-elastic.css}"href="../../static/css/cs-skin-elastic.css">
+	<!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
+	<link rel="stylesheet"th:href="@{/scss/style.css}" href="../../static/scss/style.css">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+	<!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
+	<style type="text/css">
+		.modal-backdrop.show {
+			display: none;
+		}
+
+		td {
+			border: 1px #DDD solid;
+			padding: 5px;
+			cursor: pointer;
+		}
+
+		.selected {
+			background: red;
+		}
+
+		.dataTables_filter {
+			text-align: right;
+		}
+		
+		.col-md-7{
+			padding-left: 78%;
+		}
+		.pagination {
+			
+		}
+
+		.modal {
+			z-index: 999999999;
+		}
+	</style>
+	<script>
+	
+
+	</script>
+</head>
+
+<body>
+	<!-- Left Panel -->
+
+	<aside id="left-panel" class="left-panel">
+		<nav class="navbar navbar-expand-sm navbar-default">
+
+			<div class="navbar-header">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+					<i class="fa fa-bars"></i>
+				</button>
+				<a class="navbar-brand" href="./">BiziiDash</a>
+				<a class="navbar-brand hidden" href="./">BD</a>
+			</div>
+
+			<div id="main-menu" class="main-menu collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+
+					<h3 class="menu-title">Inquery Info</h3><!-- /.menu-title -->
+					<li class="menu-item-has-children dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Inquery</a>
+						<ul class="sub-menu children dropdown-menu">
+							<li><a href="inquery_table.html">Inquery</a></li>
+							<li><a href="inquery_ms_details.html">Inquery Master Details</a></li>
+							<li><a href="inquery_verification.html">Inquery Verification</a></li>
+						</ul>
+					</li>
+
+					<h3 class="menu-title">Buyer Info</h3><!-- /.menu-title -->
+					<li class="menu-item-has-children dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Buyer</a>
+						<ul class="sub-menu children dropdown-menu">
+							<li><a href="buyer_data_upload.html">Buyer upload</a></li>
+							<li><a href="buyer_search_design.html">Buyer Search</a></li>
+						</ul>
+					</li>
+
+					<h3 class="menu-title">Design Info</h3><!-- /.menu-title -->
+					<li class="menu-item-has-children dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Design</a>
+						<ul class="sub-menu children dropdown-menu">
+							<li><a href="design_table.html">Design</a></li>
+							<li><a href="design_search.html">Design Search</a></li>
+						</ul>
+					</li>
+
+
+
+
+
+					<h3 class="menu-title">Machine Info</h3><!-- /.menu-title -->
+					<li class="menu-item-has-children dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Machine</a>
+						<ul class="sub-menu children dropdown-menu">
+							<li><a href="Machine_search.html">Machine List</a></li>
+							<li><a href="Machine_data_upload.html">Machine Upload</a></li>
+						</ul>
+					</li>
+
+					<h3 class="menu-title">Cost Info</h3><!-- /.menu-title -->
+					<li class="menu-item-has-children dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Cost</a>
+						<ul class="sub-menu children dropdown-menu">
+							<li><a href="cost_head_search.html">Cost List</a></li>
+							<li><a href="cost_calculation.html">Cost Calculation</a></li>
+							<li><a href="cost_head.html">Cost Head</a></li>
+						</ul>
+					</li>
+
+					<h3 class="menu-title">Item Info</h3><!-- /.menu-title -->
+					<li class="menu-item-has-children dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Item</a>
+						<ul class="sub-menu children dropdown-menu">
+							<li><a href="Item_list.html">Item List</a></li>
+							<li><a href="item_type_list.html">Item Type List</a></li>
+							<li><a href="item_type%20(category).html">Item Type Category</a></li>
+							<li><a href="item_entry.html">Item Upload</a></li>
+						</ul>
+					</li>
+					<h3 class="menu-title">Purchase Info</h3><!-- /.menu-title -->
+					<li class="menu-item-has-children dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Purchase</a>
+						<ul class="sub-menu children dropdown-menu">
+							<li><a href="Purchase_price_data_upload.html">Purchase Upload</a></li>
+						</ul>
+					</li>
+					<h3 class="menu-title">Specification Info</h3><!-- /.menu-title -->
+					<li class="menu-item-has-children dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Specification</a>
+						<ul class="sub-menu children dropdown-menu">
+							<li><a href="Specification_data_upload%20.html">Specification Data Upload</a></li>
+						</ul>
+					</li>
+					<h3 class="menu-title">Supplier Info</h3><!-- /.menu-title -->
+					<li class="menu-item-has-children dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Supplier</a>
+						<ul class="sub-menu children dropdown-menu">
+							<li><a href="Supplier_data_upload%20.html">Supplier Data Upload</a></li>
+						</ul>
+					</li>
+					<h3 class="menu-title">UOM Info</h3><!-- /.menu-title -->
+					<li class="menu-item-has-children dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>UOM</a>
+						<ul class="sub-menu children dropdown-menu">
+							<li><a href="uom_list.html">UOM List</a></li>
+							<li><a href="uom_upload.html">UOM Upload</a></li>
+						</ul>
+					</li>
+
+
+
+
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</nav>
+	</aside><!-- /#left-panel -->
+
+	<!-- Left Panel -->
+
+	<!-- Right Panel -->
+
+	<div id="right-panel" class="right-panel">
+
+		<!-- Header-->
+		<header id="header" class="header">
+
+			<div class="header-menu">
+
+				<div class="col-sm-7">
+					<a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+					<div class="header-left">
+						<button class="search-trigger"><i class="fa fa-search"></i></button>
+						<div class="form-inline">
+							<form class="search-form">
+								<input class="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search">
+								<button class="search-close" type="submit"><i class="fa fa-close"></i></button>
+							</form>
+						</div>
+
+
+
+					</div>
+				</div>
+
+				<div class="col-sm-5">
+					<div class="user-area dropdown float-right">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar">
+						</a>
+
+						<div class="user-menu dropdown-menu">
+							<a class="nav-link" href="#"><i class="fa fa- user"></i>My Profile</a>
+							<a class="nav-link" href="#"><i class="fa fa-power -off"></i>Logout</a>
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+
+		</header><!-- /header -->
+		<!-- Header-->
+
+		<div class="breadcrumbs">
+			<div class="col-sm-4">
+				<div class="page-header float-left">
+					<div class="page-title">
+						<h1>Buyer Inquery Table</h1>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-8">
+				<div class="page-header float-right">
+					<div class="page-title">
+						<ol class="breadcrumb text-right">
+							<li><a href="#">Dashboard</a></li>
+							<li><a href="#">Inquery Info</a></li>
+							<li class="active">Buyer Inquery Table</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="content">
+			<div class="row">
+				<div class="col-12">
+					<form action="" method="post" class="needs-validation" novalidate>
+						<div class="row">
+							<div class="col-12">
+								<div class="row">
+									<div class="col-3">
+										<div class="form-group">
+											<label>Initial Buyer</label>
+											<input type="text" class="form-control" placeholder="Int. Buyer">
+										</div>
+									</div>
+									<div class="col-3">
+										<div class="form-group">
+											<label>Ultimate Buyer</label>
+											<input type="text" class="form-control" placeholder="Ult Buyer">
+										</div>
+									</div>
+									<div class="col-3">
+										<div class="form-group">
+											<label>Inquery ID</label>
+											<input type="text" class="form-control" placeholder="Inq ID">
+										</div>
+									</div>
+									<div class="col-3">
+										<div class="form-group">
+											<label>User</label>
+											<select class="form-control">
+												<option>Select user</option>
+												<option>User 1</option>
+												<option>User 2</option>
+												<option>User 3</option>
+											</select>
+										</div>
+									</div>
+									<!--
+                                        <div class="col-2">
+                                           <input type="submit" value="search" class="btn btn-secondery btn-md" style="margin-top: 32px">
+                                       </div>
+                                       
+				
+-->
+								</div>
+
+								<div class="row">
+									<div class="col-3">
+										<div class="form-group">
+											<label>Inquery From</label>
+											<input type="date" class="form-control">
+										</div>
+									</div>
+									<div class="col-3">
+										<div class="form-group">
+											<label>Inquery To</label>
+											<input type="date" class="form-control">
+										</div>
+									</div>
+									<div class="col-3">
+										<div class="form-group">
+											<label>Mail From</label>
+											<input type="date" class="form-control">
+										</div>
+									</div>
+									<div class="col-3">
+										<div class="form-group">
+											<label>Mail To</label>
+											<input type="date" class="form-control">
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-3">
+										<div class="form-group">
+											<label>Item</label>
+											<input type="text" class="form-control" placeholder="Item">
+										</div>
+									</div>
+									<div class="col-3">
+										<div class="form-group">
+											<label>Specification</label>
+											<input type="text" class="form-control" placeholder="Seps">
+										</div>
+									</div>
+									<div class="col-3">
+										<div class="form-group">
+											<label>Mail ID</label>
+											<input type="text" class="form-control" placeholder="mail@gmail.com">
+										</div>
+									</div>
+									<div class="col-3">
+										<div class="form-group">
+											<label>User Inquery No</label>
+											<input type="text" class="form-control" placeholder="User Inq No">
+										</div>
+									</div>
+								</div>
+								<div class="row">
+
+
+									<div class="col-3">
+										<div class="form-group">
+											<label class="control-label mb-1">Remarks</label>
+											<textarea rows="1" cols="20" placeholder="Type you message here..." name="remarks" class="form-control" aria-required="true" aria-invalid="false">
+
+										</textarea>
+										</div>
+									</div>
+
+
+									<div class="col-3">
+										<div class="form-group">
+											<label>Active</label>
+											<div class="custom-control custom-checkbox">
+												<input type="checkbox" class="custom-control-input" id="defaultChecked2" checked>
+												<label class="custom-control-label" for="defaultChecked2"></label>
+											</div>
+										</div>
+									</div>
+									<div class="col-3">
+										
+										
+									</div>
+									<div class="col-3">
+									<div class="form-group">
+											<label></label>
+											<input type="submit" value="Search" class="btn btn-primary" style="margin-top: 24px;">
+											<a href="#" class="btn btn-success" data-toggle="modal" data-target="#largeModal5" style="margin-top: 23px">New Inquiry</a>
+										</div>
+										</form>
+										<!-- ============================== Inquery Entry Modal=============================== -->
+										<div class="form-group">
+											<div class="modal fade" id="largeModal5" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
+												<div class="modal-dialog modal-lg" role="document">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h5 class="modal-title" id="largeModalLabel">Add Inquery</h5>
+															<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+																<span aria-hidden="true">&times;</span>
+															</button>
+														</div>
+														<div class="modal-body" style="text-align: left">
+															<form class="needs-validation"  th:object="${order}"  th:action="@{/inquery/save}"  method="post" novalidate>
+																<div class="row">
+																	<div class="col-3">
+																		<div class="form-group">
+																			<label  class="control-label mb-1">Inquery ID</label>
+																				<input id="cc-pament" type="text" class="form-control" aria-required="true" aria-invalid="false" placeholder="Inquiry Id" th:field ="*{orderId}" readonly />
+																		</div>
+																	</div>
+																	<div class="col-3">
+																		<div class="form-group">
+																			<label for="ownerType" class="control-label mb-1">Owner Type</label>
+																			<select name="ownerType" id="ownerType" class="form-control" aria-required="true" aria-invalid="false" th:field="*{modelOrderOwnerType.orderOwnerTypeId}" required>
+																				
+																				<option value="0">Choose Type</option>
+																				<option th:each="type:${ownerTypeList}"
+																						th:value="${type.orderOwnerTypeId}"
+																						th:utext="${type.orderOwnerTypeName}"
+																				
+																				/>
+																				
+																			</select>
+																		</div>
+																	</div>
+																	<div class="col-3">
+																		<div class="form-group">
+																			<label for="owner" class="control-label mb-1">Buyer Name</label>
+																			<select   name="owner" id="owner" class="form-control" placeholder="Select"  th:field="*{modelOrderOwner.orderOwnerId}"required>
+																			<option value="0"> Select Buyer Name</option>
+																			<!-- 	<option th:each="owner:${ownerList}"
+																						th:value="${owner.orderOwnerId}"
+																						th:utext="${owner.ownerName}"
+													
+																				/>-->
+																			</select>
+																		</div>
+																	</div>
+																	<div class="col-3">
+																		<div class="form-group">
+																			<label for="ultimateOwner" class="control-label mb-1">Ultimate Buyer Name</label>
+																			<select  id="ultimateOwner" name="ultimateOwner" class="form-control" placeholder="Select" th:field="*{ultimateOwner.orderOwnerId}" required>
+																				<option value="0"> Select Ultimate Buyer</option>
+																			  	<option th:each="owner:${ownerList}"
+																						th:value="${owner.orderOwnerId}"
+																						th:text="|${owner.ownerName} ( ${owner.orderOwnerType.orderOwnerTypeName} )|"
+																				
+																				/>
+																				
+																			</select>
+																		</div>
+																	</div>
+																	
+																	<div class="col-3">
+																		<div class="form-group">
+																			<label for="user" class="control-label mb-1">User</label>
+																			<select name="user" id="user"  class="form-control" placeholder="Select" th:field=*{enteredBy.userId} required>
+																				<option value="0"> Select User</option>
+																				
+																			 	<option th:each="u:${userList}"
+																						th:value="${u.userId}"
+																						th:utext="${u.userName}"																			
+																				/> 
+																			</select>
+																		
+																		</div>
+																	</div>
+																	<div class="col-3">
+																		<div class="form-group">
+																			<label for="cluster" class="control-label mb-1">User Cluster</label>
+																			<select name="cluster" id="cluster"  class="form-control" placeholder="Select" th:field="*{modelCluster.clusterId}" required>
+																		  	  
+														
+																			</select>
+																			<div class="invalid-feedback">
+																				Please input User Cluster
+																			</div>
+																		</div>
+																	</div>
+																	<div class="col-3">
+																		<div class="form-group">
+																			<label for="contact-person" class="control-label mb-1">Contact Person</label>
+																			<select  id="contact-person" name="contact-person" class="form-control" placeholder="Select" th:field="*{contactPersonName}" required>
+																			
+															
+																			</select>
+																			<div class="invalid-feedback">
+																				Please input contact person
+																			</div>
+											
+																		</div>
+																		
+																	</div>
+
+
+																	<div class="col-3">
+																		<div class="form-group">
+																			<label for="validationCustom08" class="control-label mb-1">User Ref ID</label>
+																			<input id="validationCustom08" type="text" class="form-control" aria-required="true" aria-invalid="false"  name="" placeholder="user id" th:field="*{userRefNo}"  >
+																			<div class="invalid-feedback">
+																				Please input user ID
+																			</div>
+																		</div>
+																	</div>
+
+
+																</div>
+
+																<div class="row">
+
+																	<div class="col-6">
+																		<div class="form-group">
+																			<label for="mail" class="control-label mb-1">Buyer mail ID</label>
+																			<input id="mail" type="email" class="form-control" aria-required="true" aria-invalid="false" value=""placeholder="email@mail.com"  th:field="*{refMailId}" required>
+																			<div class="invalid-feedback">
+																				Please input email
+																			</div>
+																		</div>
+																	</div>
+																	<div class="col-3">
+																		<div class="form-group">
+																			<label class="control-label mb-1">Inquery Date</label>
+																			<input type="Date" class="form-control" aria-required="true" aria-invalid="false" name="order-date" placeholder="Select Date" th:field="*{orderDate}" required>
+																			<div class="invalid-feedback">
+																				Please input a date
+																			</div>
+																		</div>
+																	</div>
+																	<div class="col-3">
+																		<div class="form-group">
+																			<label for="cc-payment" class="control-label mb-1">Mail sent date</label>
+																			<input type="Date" class="form-control" aria-required="true" aria-invalid="false" value="" name="sent-date" placeholder="Mail Sent Date" th:field="*{mailSentDate}" required>
+																			<div class="invalid-feedback">
+																				Please input a date
+																			</div>
+																		</div>
+																	</div>
+																	<div class="col-4">
+																		<div class="form-group">
+																			<label for="cc-payment" class="control-label mb-1">Mail Receive date</label>
+																			<input type="Date" class="form-control" aria-required="true" aria-invalid="false" value="" name="view-date" placeholder="Mail View Date" th:field="*{mailReceiveDate}" required>
+																			<div class="invalid-feedback">
+																				Please input a date
+																			</div>
+																		</div>
+																	</div>
+																	<div class="col-4">
+																		<div class="form-group">
+																			<label class="control-label mb-1">Approximate Order Qty</label>
+																			<input type="number" class="form-control" id="" name="" placeholder="Approximate Order Qty" title="Enter Qty As Only Number" th:field="*{aprxOrderQty}" >
+																		</div>
+																	</div>
+																	<div class="col-4">
+																		<div class="form-group">
+																			<label class="control-label mb-1">Buyer Expected Delivery Date</label>
+																			<input type="Date" class="form-control" id="" name="delivery-date" placeholder="Buyer Expected Date" th:field="*{expectedDeliveryDate}" >
+																		</div>
+																	</div>
+
+																</div>
+
+
+																<div class="row">
+
+
+
+																	<div class="col-6">
+																		<div class="form-group">
+																			<label for="cc-payment" class="control-label mb-1">Remarks</label>
+																			<textarea rows="5" cols="50" placeholder="Type you message here..." name="remarks"  class="form-control" aria-required="true" aria-invalid="false" th:field="*{orderRemarks}">
+																			
+                                                   				 </textarea>
+																		</div>
+																	</div>
+																	<div class="col-2">
+																		<div class="form-group">
+																			<label for="cc-payment" class="control-label mb-1">Status</label>
+																			<div class="custom-control custom-checkbox">
+																				<input type="checkbox" class="custom-control-input" id="defaultChecked5" th:field="*{active}" checked>
+																				<label class="custom-control-label" for="defaultChecked5"></label>
+																			</div>
+																		</div>
+																	</div>
+
+																</div>
+
+
+
+																<div class="text-right">
+
+																	<input type="submit" class="btn btn-primary btn-md">
+																		
+																	
+
+																</div>
+															</form>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+							</div>
+						</div>
+				</div>
+
+			</div>
+
+		</div>
+		
+		<!-- =======================================  Inquery Table========================== -->
+		<div class="content mt-3">
+			<div class="animated fadeIn">
+
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="card" style="width: 1100px; overflow: scroll">
+							<div class="card-header">
+								<strong class="card-title">Inquery</strong>
+							</div>
+							<div class="card-body">
+								<table id="bootstrap-data-table" class="table table-striped table-bordered" style="min-width: 2000px">
+									<thead>
+										<tr>
+											<th scope="col">Inquery ID</th>
+											<th scope="col">User Reference No</th>
+											<th scope="col">Initial Buyer</th>
+											<th scope="col">Ultimate Buyer</th>
+											<th scope="col">Inquery date</th>
+											<th scope="col">Buyer Mail</th>
+											<th scope="col">Remarks</th>
+											<th scope="col">User</th>
+											<th scope="col">Active</th>
+											<th scope="col">Action</th>
+											<th scope="col">Item</th>
+											<th scope="col">Report</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr th:each="order : ${orderData}">
+											<td scope="row"><span th:text="${order.orderId}"></span></td>
+											<td scope="row"><span th:text="${order.userRefNo}"></span></td>
+											<td><span th:text="${order.modelOrderOwner.ownerName}"></span></td>
+											<td><span th:text="${order.ultimateOwner.ownerName}"></span></td>
+											<td><span th:text="${order.orderDate}"></span></td>
+											<td><span th:text="${order.refMailId}"></span></td>
+											<td><textarea rows="3" style="width: 100%" th:text="${order.orderRemarks}"></textarea></td>
+											<td><span th:text="${order.enteredBy.userName}"></span></td>
+											<td><span th:text="${order.sActive}"></span></td>
+											<td>
+												 <a class="btn btn-success btn-sm" data-toggle="modal" data-target="#largeModal15" th:onclick="'showOrderEditModal(' + ${order.orderId} + ')'" >Edit</a> 
+													
+											<!--  	<button type="button" class="btn btn-primary mb-1" data-toggle="modal" data-target="#largeModal15" th:onclick="'showOrderEditModal(' + ${order.orderId} + ')'">
+													Edit
+												</button>-->
+													
+												<a href="#"   type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#smallmodal999">Audit</a>
+											</td>
+											<td>
+												<a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#largeModal">Item</a>
+											</td>
+											<td><a href="#">report</a></td>
+										</tr>
+
+									</tbody>
+
+								</table>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div><!-- .animated -->
+		</div><!-- .content -->
+
+		<div class="content mt-3">
+			<div class="animated fadeIn">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="card">
+							<div class="card-header">
+								<strong class="card-title">Item</strong>
+							</div>
+							<div class="card-body">
+								<table class="table table-striped table-bordered">
+									<thead>
+										<tr>
+											<th scope="col">Item ID</th>
+											<th scope="col">Item Name</th>
+											<th scope="col">Category</th>
+											<th scope="col">Remarks</th>
+											<th scope="col">Quantity</th>
+											<th scope="col">Action</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td scope="row">1785</td>
+											<td>Lace</td>
+											<td>Lace</td>
+											<td><textarea rows="3" style="width: 100%"></textarea></td>
+											<td>
+												<a href="#" class="btn btn-primary btn-sm mb-1" data-toggle="modal" data-target="#mediumModal333">Quantity</a>
+
+											</td>
+											<td>
+												<a href="#" data-toggle="modal" data-target="#largeModal3333" class="btn btn-success btn-sm">Edit</a>
+												<a href="#"  type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#smallmodal11">Audit</a>
+											</td>
+										</tr>
+
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+
+
+
+				</div>
+			</div><!-- .animated -->
+		</div><!-- .content -->
+
+		<div class="content mt-3">
+			<div class="animated fadeIn">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="card">
+							<div class="card-header">
+								<strong class="card-title">Quantity breakdown as on spec/design</strong>
+							</div>
+							<div class="card-body">
+								<table class="table table-striped table-bordered">
+									<thead>
+										<tr>
+											<th scope="col">Quantity ID</th>
+											<th scope="col">Item Quantity</th>
+											<th scope="col">Remarks</th>
+											<th scope="col">Sepcification</th>
+											<th scope="col">Design ID</th>
+											<th scope="col">Design Add</th>
+											<th scope="col">Image</th>
+											<th scope="col">Action</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td scope="row">1432</td>
+											<td>15 Yards</td>
+											<td><textarea rows="3" style="width: 100%"></textarea></td>
+											<td><a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#largeModal99">Specification</a>
+
+											</td>
+											<td>D-102</td>
+											<td><a href="#">Design Add</a></td>
+											<td><form th:action="@{/inquery/details/save/image}" enctype="multipart/form-data" method="post" class="text-center"><input type="file" name="image" class="form-control"><input type="submit" value="Save" class="btn btn-success btn-sm" style="margin-top: 10px"></form></td>
+											<td>
+												<a href="#"data-toggle="modal" data-target="#mediumModal123123"  class="btn btn-success btn-sm btn-block">Edit</a>
+												<a href="#"  type="button" class="btn btn-primary btn-sm btn-block" data-toggle="modal" data-target="#smallmodal3">Audit</a>
+
+
+											</td>
+										</tr>
+										<tr>
+											<td scope="row">1433</td>
+											<td>15 Yards</td>
+											<td><textarea rows="3" style="width: 100%"></textarea></td>
+											<td><a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#largeModal100">Specification</a>
+
+											</td>
+											<td>D-102</td>
+											<td><a href="#">Design Add</a></td>
+											<td><form action="" method="" class="text-center"><input name="image" type="file" class="form-control"><input type="submit" value="Save" class="btn btn-success btn-sm" style="margin-top: 10px"></form></td>
+											<td>
+												<a href="#"data-toggle="modal" data-target="#mediumModal321321"  class="btn btn-success btn-sm btn-block">Edit</a>
+												<a href="#"  type="button" class="btn btn-primary btn-sm btn-block" data-toggle="modal" data-target="#smallmodal3">Audit</a>
+
+
+											</td>
+										</tr>
+
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+
+
+
+				</div>
+			</div><!-- .animated -->
+		</div><!-- .content -->
+
+		<div class="content mt-3">
+			<div class="animated fadeIn">
+				<div class="row">
+					<div class="col-8">
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="card">
+									<div class="card-header">
+										<strong class="card-title">Specification Image</strong>
+									</div>
+									<div class="card-body">
+										<table class="table table-striped table-bordered">
+											<thead>
+												<tr>
+													<th scope="col">Specification ID</th>
+													<th scope="col">Specification</th>
+													<th scope="col">Value</th>
+													<th scope="col">Remarks</th>
+													<th scope="col">Action</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td scope="row">14241</td>
+													<td scope="row">Width</td>
+													<td>4.7 cm</td>
+													<td><textarea rows="3" style="width: 100%"></textarea></td>
+													<td>
+														<a href="#"data-toggle="modal" data-target="#largeModal111"  class="btn btn-success btn-sm btn-block">Edit</a>
+														<a href="#"  type="button" class="btn btn-primary btn-sm btn-block" data-toggle="modal" data-target="#smallmodal9789">Audit</a>
+
+
+													</td>
+												</tr>
+												<tr>
+													<td scope="row">14242</td>
+													<td scope="row">Color</td>
+													<td>White</td>
+													<td><textarea rows="3" style="width: 100%"></textarea></td>
+													<td>
+														<a href="#"data-toggle="modal" data-target="#largeModal44"  class="btn btn-success btn-sm btn-block">Edit</a>
+														<a href="#"   type="button" class="btn btn-primary btn-sm btn-block" data-toggle="modal" data-target="#smallmodal987">Audit</a>
+
+
+													</td>
+												</tr>
+
+
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+
+
+
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="card">
+									<div class="card-header">
+										<strong class="card-title">Image</strong>
+									</div>
+									<div class="card-body">
+										<table id="mdlTable3" class="table table-striped table-bordered">
+											<thead>
+												<tr>
+													<th scope="col">Image ID</th>
+													<th scope="col">Image</th>
+													<th scope="col">Action</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr th:each="image : ${imageList}">
+													<td scope="row" th:text="${image.orderItemQtyImageId}"></td>
+													<td><img th:src="@{/imageDesign/{img}(img=${image.imageCaption})}"></td>
+													<td><a name="remove" type="button"  class="btn btn-danger btn-sm" th:href="@{/inquery/details/delete/image/}+${image.orderItemQtyImageId}">Remove</a></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+
+
+
+						</div>
+					</div>
+				</div>
+
+			</div><!-- .animated -->
+		</div><!-- .content -->
+
+
+	</div><!-- /#right-panel -->
+
+	<!-- Right Panel -->
+<!--=====================================================================
+				Entry info modal
+=====================================================================-->
+	<div class="modal fade" id="smallmodal999" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-sm" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="smallmodalLabel" style="color: #000">Entry info</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<div class="row">
+						<div class="col-12">
+							<div class="form-group">
+								<label for="cc-payment" class="control-label mb-1">Entered By</label>
+								<p>Jamal 1 Khan</p>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="form-group">
+								<label for="cc-payment" class="control-label mb-1">Entered Time</label>
+								<p>2:30 am</p>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="form-group">
+								<label for="cc-payment" class="control-label mb-1">Update By</label>
+								<p>active</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+
+
+						<div class="col-12">
+							<div class="form-group">
+								<label for="cc-payment" class="control-label mb-1">Update Time</label>
+								<p>active</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+<!--=====================================================================
+				Item modal
+=====================================================================-->
+	<div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content" style="z-index: 1000000000000">
+				<div class="modal-header">
+					<h5 class="modal-title" id="largeModalLabel">Item</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form action="" method="post" novalidate="novalidate">
+
+						<div class="row">
+							<div class="col-3">
+								<div class="form-group">
+									<label for="" class="control-label mb-1">Category</label>
+									<select class="form-control" aria-required="true" aria-invalid="false" name="" placeholder="select category" required>
+										<option value="B">Select Category</option>
+										<option value="B"> Lace</option>
+										<option value="B"> Fabric</option>
+										<option value="B"> Yarn</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-3">
+								<div class="form-group">
+									<label for="" class="control-label mb-1">Type</label>
+									<select class="form-control" aria-required="true" aria-invalid="false" name="" placeholder="select sub" required>
+										<option value="B"> Choose Type</option>
+										<option value="B"> Back Yarn</option>
+										<option value="B"> Front Yarn</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-3">
+								<div class="form-group">
+									<label for="" class="control-label mb-1">Yarn</label>
+									<select class="form-control" aria-required="true" aria-invalid="false" name="" placeholder="select sub sub" required>
+										<option value="B"> Choose Yarn</option>
+										<option value="B"> 30/2</option>
+										<option value="B"> 60/2</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-3">
+								<div class="form-group">
+									<label for="" class="control-label mb-1">Item</label>
+									<select class="form-control" aria-required="true" aria-invalid="false" name="" placeholder="select sub sub" required>
+										<option value="B"> Select Item</option>
+										<option value="B">Back Yarn 30/2</option>
+										<option value="B">Front Yarn 60/2</option>
+									</select>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+
+							<div class="col-3">
+								<div class="form-group">
+									<label for="" class="control-label mb-1">Item Order Date</label>
+									<input type="date" date class="form-control">
+								</div>
+							</div>
+							<div class="col-2">
+								<div class="form-group">
+									<label for="cc-payment" class="control-label mb-1">Status</label>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" class="custom-control-input" id="defaultChecked13" checked>
+										<label class="custom-control-label" for="defaultChecked13"></label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<div class="row">
+								<div class="col-12">
+									<input type="submit" value="Save" class="btn btn-primary btn-sm " >
+
+
+								</div>
+							</div>
+
+						</div>
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--=====================================================================
+				Add Quantity modal
+=====================================================================-->
+	<div class="modal fade" id="mediumModal333" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="smallmodalLabel">Add Quantity</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form action="" method="post" novalidate="novalidate">
+
+						<div class="row">
+
+							<div class="col-3">
+								<div class="form-group">
+									<label for="" class="control-label mb-1">Item Quantity</label>
+									<input type="text" placeholder="quantity" class="form-control">
+								</div>
+							</div>
+							<div class="col-3">
+								<div class="form-group">
+									<label for="" class="control-label mb-1">Sample Type</label>
+									<select class="form-control" aria-required="true" aria-invalid="false" name="" placeholder="select sub sub" required>
+										<option value="B"> Sample 1</option>
+										<option value="B"> Sample 2</option>
+										<option value="B"> Sample 3</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-3">
+								<div class="form-group">
+									<label for="" class="control-label mb-1">Unit Of messurment</label>
+									<input type="text" placeholder="unit" class="form-control">
+								</div>
+							</div>
+							<div class="col-3">
+								<div class="form-group">
+									<label for="" class="control-label mb-1">Qty. Order Date</label>
+									<input type="date" class="form-control">
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-6">
+								<div class="form-group">
+									<label for="" class="control-label mb-1">Remarks</label>
+									<textarea rows="3" style="width: 100%"></textarea>
+								</div>
+							</div>
+							<div class="col-2">
+								<div class="form-group">
+									<label for="cc-payment" class="control-label mb-1">Status</label>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" class="custom-control-input" id="defaultChecked14" checked>
+										<label class="custom-control-label" for="defaultChecked14"></label>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="modal-footer">
+							<div class="row">
+								<div class="col-12">
+									<input type="submit" value="Save" class="btn btn-primary btn-sm " >
+								</div>
+							</div>
+
+						</div>
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--=====================================================================
+				Entry info modal
+=====================================================================-->
+	<div class="modal fade" id="smallmodal11" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-sm" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="smallmodalLabel" style="color: #000">Entry info</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<div class="row">
+						<div class="col-12">
+							<div class="form-group">
+								<label for="cc-payment" class="control-label mb-1">Entered By</label>
+								<p>Jamal 2 Khan</p>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="form-group">
+								<label for="cc-payment" class="control-label mb-1">Entered Time</label>
+								<p>2:30 am</p>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="form-group">
+								<label for="cc-payment" class="control-label mb-1">Update By</label>
+								<p>active</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+
+
+						<div class="col-12">
+							<div class="form-group">
+								<label for="cc-payment" class="control-label mb-1">Update Time</label>
+								<p>active</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+<!--=====================================================================
+				Specification modal
+=====================================================================-->
+
+	<div class="modal fade" id="largeModal99" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="largeModalLabel">Specification</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form action="" method="post" novalidate="novalidate">
+
+						<div class="row">
+							<div class="col-4">
+								<div class="form-group">
+									<label for="" class="control-label mb-1">specification</label>
+									<select class="form-control" aria-required="true" aria-invalid="false" name="" placeholder="select category" required>
+										<option value="B">select specification</option>
+										<option value="B">Width</option>
+										<option value="B">Color</option>
+										<option value="B">All over fabric lace</option>
+										<option value="B">Sewing allowance</option>
+									</select>
+
+								</div>
+							</div>
+							<div class="col-4">
+								<div class="form-group">
+									<label for="" class="control-label mb-1"></label>
+									<button class="btn btn-primary" style="margin-top: 27px">+</button>
+									<button type="button" class="btn btn-primary" style="margin-top: 27px; margin-left: 10px" onclick="myCreateFunction()">Add</button>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="row">
+							<div class="col-12">
+								<table id="mdlTable" width="100%">
+									<thead>
+										<th>Specification</th>
+										<th>Value</th>
+										<th>Remarks</th>
+										<th>Action</th>
+										<th>Remove</th>
+									</thead>
+									<tbody>
+										<tr>
+										<form action="" method="">
+											<td>spec</td>
+											<td><input type="text" value="3242342"></td>
+											<td><textarea>sdfnwdjfnkewhfiehwfioew</textarea></td>
+											<td><input type="submit" value="Save" class="btn btn-success btn-sm"></td>
+											<td><button type="button" class="btn btn-danger btn-sm" onclick="myDeleteFunction()">Remove</button></td>
+										</form>
+										</tr>
+									</tbody>
+
+								</table>
+								<div class="text-right">
+									<button class="btn btn-primary" style="margin-top: 10px; margin-right: 10px">Close</button>
+								</div>
+
+							</div>
+						</div>
+
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--=====================================================================
+				Specification modal
+=====================================================================-->
+	<div class="modal fade" id="largeModal100" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="largeModalLabel">Specification</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form action="" method="post" novalidate="novalidate">
+
+						<div class="row">
+							<div class="col-4">
+								<div class="form-group">
+									<label for="" class="control-label mb-1">specification</label>
+									<select class="form-control" aria-required="true" aria-invalid="false" name="" placeholder="select category" required>
+										<option value="B">select specification</option>
+										<option value="B">Width</option>
+										<option value="B">Color</option>
+										<option value="B">All over fabric lace</option>
+										<option value="B">Sewing allowance</option>
+									</select>
+
+								</div>
+							</div>
+							<div class="col-4">
+								<div class="form-group">
+									<label for="" class="control-label mb-1"></label>
+									<button class="btn btn-primary" style="margin-top: 27px">+</button>
+									<button type="button" class="btn btn-primary" style="margin-top: 27px; margin-left: 10px" onclick="myCreateFunction2()">Add</button>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="row">
+							<div class="col-12">
+								<table id="mdlTable2" width="100%">
+									<thead>
+										<th>Specification</th>
+										<th>Value</th>
+										<th>Remarks</th>
+										<th>Action</th>
+										<th>Remove</th>
+									</thead>
+									<tbody>
+										<tr>
+										<form action="" method="">
+											<td>spec</td>
+											<td><input type="text" value="3242342"></td>
+											<td><textarea>sdfnwdjfnkewhfiehwfioew</textarea></td>
+											<td><input type="submit" value="Save" class="btn btn-success btn-sm"></td>
+											<td><button type="button" class="btn btn-danger btn-sm" onclick="myDeleteFunction2()">Remove</button></td>
+										</form>
+										</tr>
+									</tbody>
+
+								</table>
+								<div class="text-right">
+									<button class="btn btn-primary" style="margin-top: 10px; margin-right: 10px">Close</button>
+								</div>
+
+							</div>
+						</div>
+
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--=====================================================================
+				entry info modal
+=====================================================================-->
+	<div class="modal fade" id="smallmodal3" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-sm" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="smallmodalLabel" style="color: #000">Entry info</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<div class="row">
+						<div class="col-12">
+							<div class="form-group">
+								<label for="cc-payment" class="control-label mb-1">Entered By</label>
+								<p>Jamal3 Khan</p>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="form-group">
+								<label for="cc-payment" class="control-label mb-1">Entered Time</label>
+								<p>2:30 am</p>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="form-group">
+								<label for="cc-payment" class="control-label mb-1">Update By</label>
+								<p>active</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+
+
+						<div class="col-12">
+							<div class="form-group">
+								<label for="cc-payment" class="control-label mb-1">Update Time</label>
+								<p>active</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	
+	<!--=====================================================================
+				entry info modal
+=====================================================================-->
+	<div class="modal fade" id="smallmodal9789" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-sm" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="smallmodalLabel" style="color: #000">Entry info</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<div class="row">
+						<div class="col-12">
+							<div class="form-group">
+								<label for="cc-payment" class="control-label mb-1">Entered By</label>
+								<p>Jamal Khan</p>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="form-group">
+								<label for="cc-payment" class="control-label mb-1">Entered Time</label>
+								<p>2:30 am</p>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="form-group">
+								<label for="cc-payment" class="control-label mb-1">Update By</label>
+								<p>active</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+
+
+						<div class="col-12">
+							<div class="form-group">
+								<label for="cc-payment" class="control-label mb-1">Update Time</label>
+								<p>active</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+<!--=====================================================================
+				entry info modal
+=====================================================================-->
+	<div class="modal fade" id="smallmodal987" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" aria-hidden="true" style="z-index: 999999999999">
+		<div class="modal-dialog modal-sm" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="smallmodalLabel" style="color: #000">Entry info</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<div class="row">
+						<div class="col-12">
+							<div class="form-group">
+								<label for="cc-payment" class="control-label mb-1">Entered By</label>
+								<p>Jamal Khan</p>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="form-group">
+								<label for="cc-payment" class="control-label mb-1">Entered Time</label>
+								<p>2:30 am</p>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="form-group">
+								<label for="cc-payment" class="control-label mb-1">Update By</label>
+								<p>active</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+
+
+						<div class="col-12">
+							<div class="form-group">
+								<label for="cc-payment" class="control-label mb-1">Update Time</label>
+								<p>active</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	
+<!--=====================================================================
+				edit inquiry modal
+=====================================================================-->
+	
+						<div class="modal fade" id="largeModal15" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
+													<div class="modal-dialog modal-lg" role="document">
+														<div class="modal-content">
+															<div class="modal-header">
+																<h5 class="modal-title" id="largeModalLabel">Edit Inquery</h5>
+																<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+																	<span aria-hidden="true">&times;</span>
+																</button>
+															</div>
+															<div class="modal-body" style="text-align: left">
+																<form  th:object="${order}"  th:action="@{/inquery/save}" class="needs-validation" method="post"  novalidate>
+                                            <div class="row">
+                                                <div class="col-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label mb-1" >Inquery ID</label>
+                                                        <input id="update-Inquery" type="text" class="form-control" aria-required="true" aria-invalid="false" placeholder="Inquiry Id" th:field ="*{orderId}" readonly>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label mb-1">Owner Type</label>
+                                                        <select name="BUSINESS_TYPE_ID" class="form-control" id="update-owner-type" aria-required="true" aria-invalid="false" th:field="*{modelOrderOwnerType.orderOwnerTypeId}"required>
+                                                           
+                                                      		<option value="0">Choose Type</option>
+																				<option th:each="type:${ownerTypeList}"
+																						th:value="${type.orderOwnerTypeId}"
+																						th:utext="${type.orderOwnerTypeName}"
+																				
+																				/>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="col-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label mb-1">Buyer Name</label>
+                                                        <select value="B" id="update-Buyer-name" name="type" class="form-control" placeholder="Select" th:field="*{modelOrderOwner.orderOwnerId}"  required>
+															
+														</select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label mb-1">Ultimate Buyer Name</label>
+                                                        <select value="B" id="update-Ultimate-Buyer-Name" name="type" class="form-control" placeholder="Select" th:field="*{ultimateOwner.orderOwnerId}" required>
+													
+															<option value="0"> Select Ultimate Buyer</option>
+																			  	<option th:each="owner:${ownerList}"
+																						th:value="${owner.orderOwnerId}"
+																						th:text="|${owner.ownerName} ( ${owner.orderOwnerType.orderOwnerTypeName} )|"
+																				
+																				/>
+														</select>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="col-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label mb-1">User</label>
+                                                        <select value="B" id="update-user" name="type" class="form-control" placeholder="Select" th:field=*{enteredBy.userId} required>
+															<option value="B"> Select User</option>
+															<option th:each="u:${userList}"
+																						th:value="${u.userId}"
+																						th:utext="${u.userName}"																			
+																				/> 
+																	
+														
+														</select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label mb-1">User Cluster</label>
+                                                        <select value="B" id="update-user-cluster" name="type" class="form-control" placeholder="Select" th:field="*{modelCluster.clusterId}" required>
+															<option value="B"> Select Cluster</option>
+															
+																				<option th:each="cluster:${clusterList}"
+																						th:value="${cluster.modelCluster.clusterId}"
+																						th:utext="${cluster.modelCluster.clusterName}"
+																				
+																				/>
+														</select> 
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label mb-1">Contact Person</label>
+                                                        <select value="B" id="update-contact-person" name="type" class="form-control" placeholder="Select" th:field="*{contactPersonName}" required>
+															<option value="B"> Select Person</option>
+															<option value="B">Niloy</option>
+															<option value="B">Aritra</option>
+														</select>
+                                                    </div>
+                                                </div>
+                                                
+                                                
+                                                <div class="col-3">
+                                                    <div class="form-group">
+                                                        <label for="validationCustom08" class="control-label mb-1">User Defined ID</label>
+                                                        <input  type="text"  class="form-control" aria-required="true" aria-invalid="false"  id="update-ref-no" name="" placeholder="user id" th:field="*{userRefNo}" required>
+                                                        <div class="invalid-feedback">
+															Please input user ID
+														</div>
+                                                    </div>
+                                                </div>
+                                                
+                                                
+                                            </div>
+
+                                            <div class="row">
+
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <label for="update-mail" class="control-label mb-1">Buyer mail ID</label>
+                                                        <input id="update-mail" type="email" class="form-control" aria-required="true" aria-invalid="false" value="" name="BUYER_NAME" placeholder="email@mail.com" th:field="*{refMailId}" required>
+                                                        <div class="invalid-feedback">
+															Please input email
+														</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="form-group">
+                                                        <label class="control-label mb-1">Inquery Date</label>
+                                                        <input id="update-Inquery-Date" type="Date" class="form-control" aria-required="true" aria-invalid="false" value=""  name="order-date" placeholder="Select Date" th:field="*{orderDate}" required>
+                                                        <div class="invalid-feedback">
+															Please input a date
+														</div>
+                                                    </div>
+                                                </div>
+                                               <div class="col-3">
+																		<div class="form-group">
+																			<label for="update-Mail-sent-date" class="control-label mb-1">Mail sent date</label>
+																			<input id="update-Mail-sent-date"type="Date" class="form-control" aria-required="true" aria-invalid="false" value="" name="sent-date" placeholder="Mail Sent Date" th:field="*{mailSentDate}" required>
+																			<div class="invalid-feedback">
+																				Please input a date
+																			</div>
+																		</div>
+																	</div>
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <label for="update-Mail-Receive-Date" class="control-label mb-1">Mail receive date</label>
+                                                        <input id="update-Mail-Receive-Date" type="Date" class="form-control" aria-required="true" aria-invalid="false" value="" name="view-date" placeholder="Mail Receive Date" th:field="*{mailReceiveDate}" required>
+                                                        <div class="invalid-feedback">
+															Please input a date
+														</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label mb-1">Approximate Order Qty</label>
+                                                        <input type="number" class="form-control" id="update-aprox-order" name="aprox-order" placeholder="Approximate Order Qty" title="Enter Qty As Only Number" th:field="*{aprxOrderQty}"> 
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <label for="update-Buyer-Expected-Date" class="control-label mb-1">Buyer Expected Delivery Date</label>
+                                                        <input type="Date" class="form-control" id="update-Buyer-Expected-Date" name="delivery-date" placeholder="Buyer Expected Date"  th:field="*{expectedDeliveryDate}">
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+
+                                            <div class="row">
+                                                
+
+
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <label for="cc-payment" class="control-label mb-1">Remarks</label>
+                                                        <textarea rows="5" cols="50" placeholder="Type you message here..." name="remarks" id="remarks" class="form-control" aria-required="true" aria-invalid="false" th:field="*{orderRemarks}">
+
+                                                    </textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-2">
+                                                    <div class="form-group">
+                                                        <label for="cc-payment" class="control-label mb-1">Status</label>
+                                                        <div class="custom-control custom-checkbox">
+															<input type="checkbox" class="custom-control-input" id="defaultChecked5" checked th:field="*{active}" >
+															<label class="custom-control-label" for="defaultChecked5"></label>
+														</div>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+
+
+
+                                            <div class="text-right">
+
+                                                <button type="submit" class="btn btn-primary btn-md">
+                                                     Save
+                                                </button>
+
+                                            </div>
+                                        </form>
+															</div>
+														</div>
+													</div>
+												</div>
+												
+<!--=====================================================================
+				edit item modal
+=====================================================================-->												
+												<div class="modal fade" id="largeModal3333" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content" style="z-index: 1000000000000">
+				<div class="modal-header">
+					<h5 class="modal-title" id="largeModalLabel">Edit Item</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form action="" method="post" novalidate="novalidate">
+
+						<div class="row">
+							<div class="col-3">
+								<div class="form-group">
+									<label for="" class="control-label mb-1">Category</label>
+									<select class="form-control" aria-required="true" aria-invalid="false" name="" placeholder="select category" required>
+										<option value="B">Select Category</option>
+										<option value="B"> Lace</option>
+										<option value="B"> Fabric</option>
+										<option value="B"> Yarn</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-3">
+								<div class="form-group">
+									<label for="" class="control-label mb-1">Type</label>
+									<select class="form-control" aria-required="true" aria-invalid="false" name="" placeholder="select sub" required>
+										<option value="B"> Choose Type</option>
+										<option value="B"> Back Yarn</option>
+										<option value="B"> Front Yarn</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-3">
+								<div class="form-group">
+									<label for="" class="control-label mb-1">Yarn</label>
+									<select class="form-control" aria-required="true" aria-invalid="false" name="" placeholder="select sub sub" required>
+										<option value="B"> Choose Yarn</option>
+										<option value="B"> 30/2</option>
+										<option value="B"> 60/2</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-3">
+								<div class="form-group">
+									<label for="" class="control-label mb-1">Item</label>
+									<select class="form-control" aria-required="true" aria-invalid="false" name="" placeholder="select sub sub" required>
+										<option value="B"> Select Item</option>
+										<option value="B">Back Yarn 30/2</option>
+										<option value="B">Front Yarn 60/2</option>
+									</select>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+
+							<div class="col-3">
+								<div class="form-group">
+									<label for="" class="control-label mb-1">Item Order Date</label>
+									<input type="date" date class="form-control">
+								</div>
+							</div>
+							<div class="col-2">
+								<div class="form-group">
+									<label for="cc-payment" class="control-label mb-1">Status</label>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" class="custom-control-input" id="defaultChecked13" checked>
+										<label class="custom-control-label" for="defaultChecked13"></label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<div class="row">
+								<div class="col-12">
+									<input type="submit" value="Save" class="btn btn-primary btn-sm " >
+
+
+								</div>
+							</div>
+
+						</div>
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!--=====================================================================
+				Edit Quantity modal
+=====================================================================-->
+	<div class="modal fade" id="mediumModal123123" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="smallmodalLabel">Edit Quantity</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form action="" method="post" novalidate="novalidate">
+
+						<div class="row">
+
+							<div class="col-3">
+								<div class="form-group">
+									<label for="" class="control-label mb-1">Item Quantity</label>
+									<input type="text" placeholder="quantity" class="form-control">
+								</div>
+							</div>
+							<div class="col-3">
+								<div class="form-group">
+									<label for="" class="control-label mb-1">Sample Type</label>
+									<select class="form-control" aria-required="true" aria-invalid="false" name="" placeholder="select " required>
+										<option value="B"> Sample 1</option>
+										<option value="B"> Sample 2</option>
+										<option value="B"> Sample 3</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-3">
+								<div class="form-group">
+									<label for="" class="control-label mb-1">Unit Of messurment</label>
+									<input type="text" placeholder="unit" class="form-control">
+								</div>
+							</div>
+							<div class="col-3">
+								<div class="form-group">
+									<label for="" class="control-label mb-1">Qty. Order Date</label>
+									<input type="date" class="form-control">
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-6">
+								<div class="form-group">
+									<label for="" class="control-label mb-1">Remarks</label>
+									<textarea rows="3" style="width: 100%"></textarea>
+								</div>
+							</div>
+							<div class="col-2">
+								<div class="form-group">
+									<label for="cc-payment" class="control-label mb-1">Status</label>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" class="custom-control-input" id="defaultChecked14" checked>
+										<label class="custom-control-label" for="defaultChecked14"></label>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="modal-footer">
+							<div class="row">
+								<div class="col-12">
+									<input type="submit" value="Save" class="btn btn-primary btn-sm " >
+								</div>
+							</div>
+
+						</div>
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--=====================================================================
+				Edit Quantity modal
+=====================================================================-->
+	<div class="modal fade" id="mediumModal321321" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="smallmodalLabel">Edit Quantity</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form action="" method="post" novalidate="novalidate">
+
+						<div class="row">
+
+							<div class="col-3">
+								<div class="form-group">
+									<label for="" class="control-label mb-1">Item Quantity</label>
+									<input type="text" placeholder="quantity" class="form-control">
+								</div>
+							</div>
+							<div class="col-3">
+								<div class="form-group">
+									<label for="" class="control-label mb-1">Sample Type</label>
+									<select class="form-control" aria-required="true" aria-invalid="false" name="" placeholder="select sub sub" required>
+										<option value="B"> Sample 1</option>
+										<option value="B"> Sample 2</option>
+										<option value="B"> Sample 3</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-3">
+								<div class="form-group">
+									<label for="" class="control-label mb-1">Unit Of messurment</label>
+									<input type="text" placeholder="unit" class="form-control">
+								</div>
+							</div>
+							<div class="col-3">
+								<div class="form-group">
+									<label for="" class="control-label mb-1">Qty. Order Date</label>
+									<input type="date" class="form-control">
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-6">
+								<div class="form-group">
+									<label for="" class="control-label mb-1">Remarks</label>
+									<textarea rows="3" style="width: 100%"></textarea>
+								</div>
+							</div>
+							<div class="col-2">
+								<div class="form-group">
+									<label for="cc-payment" class="control-label mb-1">Status</label>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" class="custom-control-input" id="defaultChecked14" checked>
+										<label class="custom-control-label" for="defaultChecked14"></label>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="modal-footer">
+							<div class="row">
+								<div class="col-12">
+									<input type="submit" value="Save" class="btn btn-primary btn-sm " >
+								</div>
+							</div>
+
+						</div>
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!--=====================================================================
+			edit Specification modal
+=====================================================================-->
+	<div class="modal fade" id="largeModal111" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="largeModalLabel">Edit Specification</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form action="" method="post" novalidate="novalidate">
+
+						<div class="row">
+							<div class="col-md-4">
+								<label class="control-label mb-1">Specification ID</label>
+								<input type="text" placeholder="specification id" class="form-control" readonly>
+							</div>
+							<div class="col-md-4">
+								<label class="control-label mb-1">Specification</label>
+								<input type="text" placeholder="specification" class="form-control" readonly>
+							</div>
+							<div class="col-md-4">
+								<label class="control-label mb-1">Value</label>
+								<input type="text" placeholder="value" class="form-control">
+							</div>
+						</div>
+
+
+						<div class="row">
+							<div class="col-md-4">
+								<label class="control-label mb-1">Remarks</label>
+								<textarea class="form-control"></textarea>
+							</div>
+							<div class="col-md-4">
+								 <div class="form-group">
+									<label for="cc-payment" class="control-label mb-1">Status</label>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" class="custom-control-input" id="defaultChecked5" checked>
+										<label class="custom-control-label" for="defaultChecked5"></label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<label class="control-label mb-1"></label>
+								<input type="submit" class="btn btn-primary" value="Save" style="margin-top: 20px">
+							</div>
+						</div>
+
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+		<!--=====================================================================
+			edit Specification modal
+=====================================================================-->
+	<div class="modal fade" id="largeModal44" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="largeModalLabel">Edit Specification</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form action="" method="post" novalidate="novalidate">
+
+						<div class="row">
+							<div class="col-md-4">
+								<label class="control-label mb-1">Specification ID</label>
+								<input type="text" placeholder="specification id" class="form-control" readonly>
+							</div>
+							<div class="col-md-4">
+								<label class="control-label mb-1">Specification</label>
+								<input type="text" placeholder="specification" class="form-control" readonly>
+							</div>
+							<div class="col-md-4">
+								<label class="control-label mb-1">Value</label>
+								<input type="text" placeholder="value" class="form-control">
+							</div>
+						</div>
+
+
+						<div class="row">
+							<div class="col-md-4">
+								<label class="control-label mb-1">Remarks</label>
+								<textarea class="form-control"></textarea>
+							</div>
+							<div class="col-md-4">
+								 <div class="form-group">
+									<label for="cc-payment" class="control-label mb-1">Status</label>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" class="custom-control-input" id="defaultChecked5" checked>
+										<label class="custom-control-label" for="defaultChecked5"></label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<label class="control-label mb-1"></label>
+								<input type="submit" class="btn btn-primary" value="Save" style="margin-top: 20px">
+							</div>
+						</div>
+
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="/js/vendor/jquery-2.1.4.min.js"></script>
+	<script src="/js/popper.min.js"></script>
+	<script src="/js/plugins.js"></script>
+	<script src="/js/main.js"></script>
+	<script src="/js/order.js"></script>
+
+	<script src="/js/lib/data-table/datatables.min.js"></script>
+	<script src="/js/lib/data-table/dataTables.bootstrap.min.js"></script>
+	<script src="/js/lib/data-table/dataTables.buttons.min.js"></script>
+	<script src="/js/lib/data-table/buttons.bootstrap.min.js"></script>
+	<script src="/js/lib/data-table/jszip.min.js"></script>
+	<script src="/js/lib/data-table/pdfmake.min.js"></script>
+	<script src="/js/lib/data-table/vfs_fonts.js"></script>
+	<script src="/js/lib/data-table/buttons.html5.min.js"></script>
+	<script src="/js/lib/data-table/buttons.print.min.js"></script>
+	<script src="/js/lib/data-table/buttons.colVis.min.js"></script>
+	<script src="/js/lib/data-table/datatables-init.js"></script>
+
+
+	<script type="text/javascript">
+//		function myFunction() {
+//			document.getElementById("mdlTable").deleteRow(1);
+//		}
+
+  
+
+		function myFunction2() {
+			document.getElementById("mdlTable2").deleteRow(1);
+		}
+
+		function myFunction3() {
+			document.getElementById("mdlTable3").deleteRow(1);
+		}
+		
+		function myCreateFunction() {
+			var table = document.getElementById("mdlTable");
+			var row = table.insertRow(1);
+			var cell1 = row.insertCell(0);
+			var cell2 = row.insertCell(1);
+			var cell3 = row.insertCell(2);
+			var cell4 = row.insertCell(3);
+			var cell5 = row.insertCell(4);
+			cell1.innerHTML = "Width";
+			cell2.innerHTML = '<form action="submited.php" method=""><input type="text">';
+			cell3.innerHTML = '<textarea style="width: 100%"></textarea>';
+			cell4.innerHTML = '<button type="submit" value="save" class="btn btn-success btn-sm">Save</button></form>';
+			cell5.innerHTML = '<button type="button" class="btn btn-danger btn-sm" onclick="myDeleteFunction()">Remove</button>';
+		}
+
+		function myDeleteFunction() {
+			document.getElementById("mdlTable").deleteRow(1);
+		}
+		
+		
+		function myCreateFunction2() {
+			var table = document.getElementById("mdlTable2");
+			var row = table.insertRow(1);
+			var cell1 = row.insertCell(0);
+			var cell2 = row.insertCell(1);
+			var cell3 = row.insertCell(2);
+			var cell4 = row.insertCell(3);
+			var cell5 = row.insertCell(4);
+			cell1.innerHTML = "width";
+			cell2.innerHTML = '<form action="submited.php" method=""><input type="text">';
+			cell3.innerHTML = '<textarea style="width: 100%"></textarea>';
+			cell4.innerHTML = '<button type="submit" value="save" class="btn btn-success btn-sm">Save</button></form>';
+			cell5.innerHTML = '<button type="button" class="btn btn-danger btn-sm" onclick="myDeleteFunction2()">Remove</button>';
+		}
+
+		function myDeleteFunction2() {
+			document.getElementById("mdlTable2").deleteRow(1);
+		}
+		
+		
+		$('table td').keyup(function() {
+		  clearTimeout($.data(this, 'timer'));
+		  var wait = setTimeout(saveData, 500); // delay after user types
+		  $(this).data('timer', wait);
+		});
+		function saveData() {
+		  // ... ajax ...
+		}
+		
+		
+		$('#ownerType').change(
+		        function() {
+		            $.getJSON("/inquery/owner", {
+		                ownerType : $(this).val(),
+		                ajax : 'true'
+		            }, function(data) {
+		                var html = '<option value="0">Select Buyer Name</option>';
+		                var len = data.length;
+		                for ( var i = 0; i < len; i++) {
+		                    html += '<option value="' + data[i].orderOwnerId + '">'
+		                            + data[i].ownerName + '</option>';
+		                }
+		                html += '</option>';
+		                $('#owner').html(html);
+		            });
+		        });
+		
+	
+		$('#user').change(
+		        function() {
+		            $.getJSON("/inquery/user/cluster", {
+		               user : $(this).val(),
+		                ajax : 'true'
+		            }, function(data) {
+		                var html = '<option value="0">Select Cluster Name</option>';
+		                var len = data.length;
+		              
+		                for ( var i = 0; i < len; i++) {
+		                    html += '<option value="' + data[i].modelCluster.clusterId+ '">'
+		                            + data[i].modelCluster.clusterName + '</option>';
+		                }
+		                html += '</option>';
+		                $('#cluster').html(html);
+		            });
+		        });
+		
+		$('#owner').change(
+		        function() {
+		            $.getJSON("/inquery/owner/person", {
+		               owner : $(this).val(),
+		                ajax : 'true'
+		            }, function(data) {
+		                var html = '<option value="0">Select Person</option>';
+		                var len = data.length;
+		               
+		               // for ( var i = 0; i < len; i++) {
+		                	html += '<option value="' + data.contactPersonName+ '">'
+                            + data.contactPersonName + '</option>';
+		              //  }
+		               // html += '</option>';
+		                $('#contact-person').html(html);
+		            });
+		        });
+		 $('#update-owner-type').change(
+			        function() {
+			            $.getJSON("/inquery/owner", {
+			                ownerType : $(this).val(),
+			                ajax : 'true'
+			            }, function(data) {
+			                var html = '<option value="0">Select Buyer Name</option>';
+			                var len = data.length;
+			                for ( var i = 0; i < len; i++) {
+			                    html += '<option value="' + data[i].orderOwnerId + '">'
+			                            + data[i].ownerName + '</option>';
+			                }
+			                html += '</option>';
+			                $('#update-Buyer-name').html(html);
+			            });
+			        }); 
+			
+		
+
+		
+		$('#largeModal5').on('hidden.bs.modal', function () {
+		    $(this).find('form').trigger('reset');
+		});
+		
+		
+		$('#largeModal15').on('hidden.bs.modal', function () {
+		    $(this).find('form').trigger('reset');
+		});
+		</script>
+		
+		
+		
+		
+	
+     
+												
+
+</body>
+
+</html>

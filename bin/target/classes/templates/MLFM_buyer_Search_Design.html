@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+ <meta charset="utf-8" />
+	<title>Spring Boot + JPA + Datatables</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+ <script src="/js/datatable.js"></script> 
+	
+    </head>
+<body>
+    
+     <form>
+        <label for="name">Name</label> <input type="text" id="" name="" placeholder="Name" >
+          Type
+           <select value="" id="" name="country" class="" placeholder="Type" required>
+            
+              <option value="">Select Your Type </option>
+              
+            
+            </select>
+         <label for="short code"> Short Code </label> <input type="text" id="" name="" placeholder="Short Code">
+          Country
+           <select value="" id="" name="country" class="" placeholder="Country" >
+            
+              <option value="" >Select Your Country </option>
+              
+            </select>
+         <label for="phone number"> Phone Number </label> <input type="tel" id="" name="" pattern="[0-9]{11}" title="Only Numreic Number" placeholder="123-456-789" > 
+        
+         <button type="button" id="" name="">Add</button>
+        <button type="search" id="" name="">Search </button>
+        <button type="button" id="" name="">Audit</button>
+            
+        <br>
+         <br>
+ <!--        <input type="text" id="" name="" placeholder="Name" >
+         <input type="text" id="" name="" placeholder="Country" >
+         <input type="tel" id="" name="" pattern="[0-9]{11}" title="Only numeric number"  placeholder="123-456-789" >
+         <input type="checkbox"> --> 
+    </form>
+    <br><br>
+    
+    <table id= "buyerTable" class="display">
+	<thead>
+    <tr>
+    
+    <th>Name</th> 
+    <th>Short Code</th>
+    <th>Type</th>  
+    <th>Country</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Active</th>
+    </tr>
+	</thead>
+    <tbody>
+    <tr th:if="${buyerList.empty}">
+            <td colspan="2"> No Buyer Available </td>
+        </tr>
+        <tr th:each="buyer : ${buyerList}">
+            <td><span th:text="${buyer.buyerName}">  </span></td>
+            <td><span th:text="${buyer.shortCode}">  </span></td>
+            <td><span th:text="${buyer.typeId}"> </span></td>
+            <td><span th:text="${buyer.countryId.countryName}"> </span></td>
+            <td><span th:text="${buyer.email}"> </span></td>
+            <td><span th:text="${buyer.phoneNumber}"> </span></td>
+            <td><span th:text="${buyer.active}"> </span></td>
+            
+            
+        </tr>
+    </tbody>
+   
+    </table>
+    
+    </body>
+
+
+
+
+<!-- <script>
+
+
+$(document).ready( function () {
+    $('#buyerTable').DataTable();
+} );
+</script> -->
+
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+<title>Buyer Entry</title>
+
+</head>
+<body>
+	<form class="form-horizontal" th:object="${buyer}"
+		th:action="@{/buyers}" method="post">
+		<input type="text" id="" name="" placeholder="Message" th:value="${message}"readonly style="color: limegreen; display: block">
+		<a th:href="@{/buyers/add}">New</a>
+		
+		<a th:href="@{/buyers}">Buyer List</a>
+
+
+
+		<label for="buyer id"> Buyer Id</label> <input type="text" id=""
+			name="" placeholder="Buyer Id" th:field="*{buyerId}" readonly>
+
+		<br> <br> <label for="buyer name"> Buyer Name</label> <input
+			type="text" id="" name="" placeholder="Buyer Name"
+			th:field="*{buyerName}" required> <br> <br>
+			
+			 Type
+			  <select
+					value="B" id="type" name="type" class="" placeholder="Type" th:field="*{typeName}"
+			required>
+
+			<option value="B">Select Your Type</option>
+			<option th:each="type:${typeList}"
+			th:value="${type.typeId}"
+			th:utext="${type.typeName}"
+			/>
+
+		</select> <label for="short code"> Short Code </label> <input type="text" id=""
+			name="" placeholder="Short Code" th:field="*{shortCode}"> <br>
+			
+			
+		<br> Country 
+		<select   th:field="*{countryName}" name='country'>
+
+			<option value="">Select Your Country</option>
+			<option th:each="country:${countryList}"
+			th:value="${country.countryId}"
+			
+			th:utext="${country.countryName}"
+			/>
+			
+		</select> <br> <br>
+		 <label for="post code"> Post Code </label> <input
+			type="tel" id="" name="" placeholder="Post Code" pattern="[0-9]{11}"
+			title="Only Numreic Number" th:field="*{postCode}" required>
+			
+		<br> <br> <label for="address"> Address</label><br>
+		<textarea placeholder="Type you address here..." name="message"
+			class="form-control" rows="5" cols="50" id=""
+			th:field="*{buyerAddress}"></textarea>
+		<br> <br> <label for="contact person"> Contact
+			Person </label> <input type="text" id="" name="" placeholder="Contact Person"
+			th:field="*{contactPerson}"> <label for="phone number">
+			Phone Number </label> <input type="tel" id="" name="" pattern="[0-9]{11}"
+			title="Only Numreic Number" placeholder="123-456-789" required>
+
+		<br> <br> <label for="email"> Email </label> <input
+			type="email" id="" name="" placeholder="Email" th:field="*{email}"
+			required> <br> <br> <label for="remarks">
+			Remarks </label> <br>
+		<textarea placeholder="Type you message here..." name="remarks"
+			class="form-control" rows="5" cols="50" id="" th:field="*{remarks}"></textarea>
+
+
+
+		<br> <label for="active"> Active </label> <input type="checkbox"
+			th:field="*{active}"> <br> <br>
+		<button type="submit">Submit</button>
+	</form>
+
+
+</body>
+
+
+
+</html>
